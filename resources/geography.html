@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geography — Amoeba</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="iframe-body">
+
+<!-- =============================================
+     NAVIGATION
+============================================= -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__brand">Amoeba</a>
+    <ul class="nav__list">
+
+      <li class="nav__item">
+        <a href="/" class="nav__link">Home</a>
+      </li>
+
+      <li class="nav__item">
+        <span class="nav__link">
+          Projects
+          <svg class="nav__chevron" width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div class="nav__dropdown">
+          <a href="#" class="nav__drop-item">
+            <span class="nav__drop-icon" style="background:#eef2ff;">⚡</span>Featured
+          </a>
+          <a href="#" class="nav__drop-item">
+            <span class="nav__drop-icon" style="background:#edfdf5;">🔓</span>Open Source
+          </a>
+          <a href="#" class="nav__drop-item">
+            <span class="nav__drop-icon" style="background:#f5f5f7;">📦</span>Archived
+          </a>
+        </div>
+      </li>
+
+      <li class="nav__item">
+        <span class="nav__link">
+          Organisations
+          <svg class="nav__chevron" width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div class="nav__dropdown">
+          <a href="#" class="nav__drop-item">
+            <span class="nav__drop-icon" style="background:#fff0f6;">🔬</span>Research
+          </a>
+          <a href="#" class="nav__drop-item">
+            <span class="nav__drop-icon" style="background:#eef5ff;">💻</span>Development
+          </a>
+          <a href="#" class="nav__drop-item">
+            <span class="nav__drop-icon" style="background:#edfdf0;">🌱</span>Community
+          </a>
+        </div>
+      </li>
+
+      <li class="nav__item">
+        <span class="nav__link">
+          Resources
+          <svg class="nav__chevron" width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div class="nav__dropdown">
+          <a href="/resources/video-center.html" class="nav__drop-item">
+            <span class="nav__drop-icon" style="background:#fff0ee;">▶️</span>Video Center
+          </a>
+          <a href="/resources/geography.html" class="nav__drop-item is-active">
+            <span class="nav__drop-icon" style="background:#edf5ff;">🌏</span>Geography
+          </a>
+        </div>
+      </li>
+
+      <li class="nav__item">
+        <span class="nav__link">
+          Games
+          <svg class="nav__chevron" width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div class="nav__dropdown">
+          <a href="/games/gamplo.html" class="nav__drop-item">
+            <span class="nav__drop-icon" style="background:#fff0f0;">🎮</span>Gamplo
+          </a>
+          <a href="/games/artifact.html" class="nav__drop-item">
+            <span class="nav__drop-icon" style="background:#f0f0ff;">🕹️</span>Experiment
+          </a>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<!-- =============================================
+     IFRAME
+============================================= -->
+<div class="iframe-wrap">
+  <div class="iframe-topbar">
+    <button class="iframe-fs-btn" id="fsBtn">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
+        <path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"
+          stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="fs-label">Full screen</span>
+    </button>
+  </div>
+  <iframe
+    id="mainIframe"
+    src="https://claude.ai/public/artifacts/c0ccf072-6e63-4ec9-bcd2-15465b2de8ed"
+    title="Geography Interactive"
+    allowfullscreen
+    loading="lazy"
+  ></iframe>
+</div>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
