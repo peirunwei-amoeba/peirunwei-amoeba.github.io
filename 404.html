@@ -3,17 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Geography — Amoeba</title>
+  <title>404 — Amoeba</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body class="iframe-body">
+<body>
 
-<!-- =============================================
-     NAVIGATION
-============================================= -->
 <nav class="nav" id="nav">
   <div class="nav__inner">
     <a href="/" class="nav__brand">Amoeba</a>
@@ -80,7 +77,7 @@
           <a href="/resources/video-center.html" class="nav__drop-item">
             <span class="nav__drop-icon" style="background:#fff0ee;">▶️</span>Video Center
           </a>
-          <a href="/resources/geography.html" class="nav__drop-item is-active">
+          <a href="/resources/geography.html" class="nav__drop-item">
             <span class="nav__drop-icon" style="background:#edf5ff;">🌏</span>Geography
           </a>
         </div>
@@ -107,26 +104,18 @@
   </div>
 </nav>
 
-<!-- =============================================
-     IFRAME
-============================================= -->
-<div class="iframe-wrap">
-  <div class="iframe-topbar">
-    <button class="iframe-fs-btn" id="fsBtn">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
-        <path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"
-          stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span class="fs-label">Full screen</span>
-    </button>
+<div class="error-page">
+  <!-- Background orbs for depth -->
+  <div class="hero__orb hero__orb--a" style="opacity:0.5;"></div>
+  <div class="hero__orb hero__orb--b" style="opacity:0.5;"></div>
+
+  <p class="error-num">404</p>
+  <h1 class="error-title">Nothing here.</h1>
+  <p class="error-sub">The page you're looking for has wandered off. Let's get you back on track.</p>
+  <div class="error-actions">
+    <a href="/" class="btn btn--primary">Go home</a>
+    <a href="javascript:history.back()" class="btn btn--ghost">← Go back</a>
   </div>
-  <iframe
-    id="mainIframe"
-    src="https://claude.ai/public/artifacts/c0ccf072-6e63-4ec9-bcd2-15465b2de8ed"
-    title="Geography Interactive"
-    allowfullscreen
-    loading="lazy"
-  ></iframe>
 </div>
 
 <script src="/js/main.js"></script>

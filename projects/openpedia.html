@@ -3,17 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Experiment — Amoeba</title>
+  <title>Openpedia — Amoeba</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body class="iframe-body">
+<body>
 
-<!-- =============================================
-     NAVIGATION
-============================================= -->
 <nav class="nav" id="nav">
   <div class="nav__inner">
     <a href="/" class="nav__brand">Amoeba</a>
@@ -31,6 +28,9 @@
           </svg>
         </span>
         <div class="nav__dropdown">
+          <a href="/projects/openpedia.html" class="nav__drop-item is-active">
+            <span class="nav__drop-icon" style="background:#fff8ee;">📚</span>Openpedia<span class="nav__wip">WIP</span>
+          </a>
           <a href="#" class="nav__drop-item">
             <span class="nav__drop-icon" style="background:#eef2ff;">⚡</span>Featured
           </a>
@@ -51,6 +51,9 @@
           </svg>
         </span>
         <div class="nav__dropdown">
+          <a href="/organisations/mst.html" class="nav__drop-item">
+            <span class="nav__drop-icon" style="background:#f0eeff;">🏛️</span>MST<span class="nav__wip">WIP</span>
+          </a>
           <a href="#" class="nav__drop-item">
             <span class="nav__drop-icon" style="background:#fff0f6;">🔬</span>Research
           </a>
@@ -91,8 +94,8 @@
           <a href="/games/gamplo.html" class="nav__drop-item">
             <span class="nav__drop-icon" style="background:#fff0f0;">🎮</span>Gamplo
           </a>
-          <a href="/games/artifact.html" class="nav__drop-item is-active">
-            <span class="nav__drop-icon" style="background:#f0f0ff;">🕹️</span>Experiment
+          <a href="/games/drills.html" class="nav__drop-item">
+            <span class="nav__drop-icon" style="background:#f0f0ff;">🕹️</span>Drills
           </a>
         </div>
       </li>
@@ -101,27 +104,29 @@
   </div>
 </nav>
 
-<!-- =============================================
-     IFRAME
-============================================= -->
-<div class="iframe-wrap">
-  <div class="iframe-topbar">
-    <button class="iframe-fs-btn" id="fsBtn">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
-        <path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"
-          stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span class="fs-label">Full screen</span>
-    </button>
+<section class="wip-page">
+  <div class="hero__orb hero__orb--a"></div>
+  <div class="hero__orb hero__orb--b"></div>
+  <div class="hero__orb hero__orb--c" style="background: radial-gradient(circle, rgba(255,149,0,0.07) 0%, transparent 65%);"></div>
+
+  <span class="wip-tag">
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+    Under development
+  </span>
+  <h1 class="wip-title">Openpedia.</h1>
+  <p class="wip-sub">This project is currently in development. Check back soon.</p>
+  <div class="wip-actions">
+    <a href="/" class="btn btn--primary">Back home</a>
   </div>
-  <iframe
-    id="mainIframe"
-    src="https://claude.ai/public/artifacts/11265a26-5e95-4175-8305-f68e6cb4d9c9"
-    title="Interactive Experiment"
-    allowfullscreen
-    loading="lazy"
-  ></iframe>
-</div>
+  <div class="wip-dots">
+    <div class="wip-dot"></div>
+    <div class="wip-dot"></div>
+    <div class="wip-dot"></div>
+  </div>
+</section>
 
 <script src="/js/main.js"></script>
 </body>
