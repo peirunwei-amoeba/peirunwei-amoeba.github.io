@@ -43,6 +43,27 @@ if (nav) {
 })();
 
 /* =============================================
+   MOBILE HAMBURGER MENU
+============================================= */
+(function initMobileMenu() {
+  const btn  = document.getElementById('hamburger');
+  const menu = document.getElementById('mobileMenu');
+  if (!btn || !menu) return;
+
+  const open  = () => { btn.classList.add('is-open'); menu.classList.add('is-open'); menu.setAttribute('aria-hidden','false'); document.body.classList.add('no-scroll'); };
+  const close = () => { btn.classList.remove('is-open'); menu.classList.remove('is-open'); menu.setAttribute('aria-hidden','true'); document.body.classList.remove('no-scroll'); };
+  const toggle = () => btn.classList.contains('is-open') ? close() : open();
+
+  btn.addEventListener('click', toggle);
+
+  /* Close on any link tap */
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+
+  /* Close if window resizes past breakpoint */
+  window.addEventListener('resize', () => { if (window.innerWidth > 800) close(); }, { passive: true });
+})();
+
+/* =============================================
    FULLSCREEN — iframe pages
 ============================================= */
 (function initFullscreen() {
