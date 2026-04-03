@@ -1010,27 +1010,26 @@ body.iframe-body {
 }
 
 /* =============================================
-   MOBILE NAVIGATION
+   MOBILE — hamburger button
+   Hidden on desktop via min-width query below
 ============================================= */
-
-/* Hamburger button — hidden on desktop */
 .nav__hamburger {
-  display: none;
   position: absolute;
   right: 20px;
-  width: 36px;
-  height: 36px;
+  display: none;                 /* revealed only in mobile query */
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 5.5px;
+  width: 36px;
+  height: 36px;
+  padding: 4px;
   background: none;
   border: none;
-  cursor: pointer;
-  padding: 4px;
   border-radius: 8px;
-  transition: background 0.18s;
+  cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  transition: background 0.18s ease;
 }
 .nav__hamburger:hover { background: rgba(0,0,0,0.06); }
 
@@ -1040,42 +1039,84 @@ body.iframe-body {
   height: 1.5px;
   background: var(--text);
   border-radius: 2px;
-  transition: transform 0.25s var(--ease-out), opacity 0.2s ease;
+  transition: transform 0.28s var(--ease-out), opacity 0.2s ease;
   transform-origin: center;
 }
+/* Animate into X when open */
 .nav__hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav__hamburger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .nav__hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Mobile full-screen overlay menu */
+/* =============================================
+   MOBILE — overlay menu
+   Always position:fixed; hidden via visibility
+   so opacity/transform can be transitioned.
+============================================= */
 .mobile-menu {
-  display: none; /* shown only on mobile */
   position: fixed;
   top: var(--nav-h);
-  left: 0; right: 0; bottom: 0;
-  background: rgba(251, 251, 253, 0.98);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 998;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: rgba(251, 251, 253, 0.97);
+  backdrop-filter: saturate(200%) blur(24px);
+  -webkit-backdrop-filter: saturate(200%) blur(24px);
+
+  /* Hidden state — use visibility so transition works */
+  visibility: hidden;
   opacity: 0;
+  transform: translateY(-16px) scale(0.98);
+  transform-origin: top center;
   pointer-events: none;
-  transform: translateY(-6px);
-  transition: opacity 0.22s var(--ease-out), transform 0.22s var(--ease-out);
+  transition:
+    opacity    0.28s var(--ease-out),
+    transform  0.32s var(--ease-spring),
+    visibility 0s   linear 0.32s;  /* delay hide until anim done */
 }
+
+/* Open state */
 .mobile-menu.is-open {
+  visibility: visible;
   opacity: 1;
+  transform: none;
   pointer-events: all;
-  transform: translateY(0);
+  transition:
+    opacity    0.28s var(--ease-out),
+    transform  0.32s var(--ease-spring),
+    visibility 0s   linear 0s;     /* show immediately */
 }
 
-.mobile-menu__inner {
-  padding: 8px 0 60px;
+/* ── Item stagger animation ── */
+.mobile-section,
+.mobile-rule {
+  opacity: 0;
+  transform: translateY(10px);
+}
+.mobile-menu.is-open .mobile-section,
+.mobile-menu.is-open .mobile-rule {
+  animation: mobileItemIn 0.38s var(--ease-spring) both;
+}
+.mobile-menu.is-open .mobile-section:nth-child(1)  { animation-delay: 0.04s; }
+.mobile-menu.is-open .mobile-rule:nth-child(2)     { animation-delay: 0.07s; }
+.mobile-menu.is-open .mobile-section:nth-child(3)  { animation-delay: 0.10s; }
+.mobile-menu.is-open .mobile-rule:nth-child(4)     { animation-delay: 0.13s; }
+.mobile-menu.is-open .mobile-section:nth-child(5)  { animation-delay: 0.16s; }
+.mobile-menu.is-open .mobile-rule:nth-child(6)     { animation-delay: 0.19s; }
+.mobile-menu.is-open .mobile-section:nth-child(7)  { animation-delay: 0.22s; }
+.mobile-menu.is-open .mobile-rule:nth-child(8)     { animation-delay: 0.25s; }
+.mobile-menu.is-open .mobile-section:nth-child(9)  { animation-delay: 0.28s; }
+
+@keyframes mobileItemIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
 }
 
-.mobile-section {
-  padding: 4px 0;
-}
+.mobile-menu__inner { padding: 8px 0 60px; }
+
+.mobile-section { padding: 4px 0; }
 
 .mobile-rule {
   height: 1px;
@@ -1086,16 +1127,16 @@ body.iframe-body {
 .mobile-link {
   display: flex;
   align-items: center;
-  padding: 14px 28px;
+  padding: 15px 28px;
   font-size: 17px;
   font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--text);
   text-decoration: none;
-  transition: opacity 0.15s;
   -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.15s;
 }
-.mobile-link:active { opacity: 0.5; }
+.mobile-link:active { opacity: 0.4; }
 
 .mobile-section__label {
   padding: 18px 28px 6px;
@@ -1119,11 +1160,18 @@ body.iframe-body {
   -webkit-tap-highlight-color: transparent;
   transition: opacity 0.15s;
 }
-.mobile-sub-link:active { opacity: 0.5; }
+.mobile-sub-link:active { opacity: 0.4; }
 
-/* Responsive breakpoint */
+/* ── Breakpoints ── */
+
+/* Desktop: hamburger and mobile menu completely gone */
+@media (min-width: 801px) {
+  .nav__hamburger { display: none !important; }
+  .mobile-menu    { display: none !important; }
+}
+
+/* Mobile: hide desktop nav items, reveal hamburger */
 @media (max-width: 800px) {
-  .nav__list    { display: none !important; }
+  .nav__list      { display: none !important; }
   .nav__hamburger { display: flex; }
-  .mobile-menu  { display: block; }
 }
