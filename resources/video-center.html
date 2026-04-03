@@ -34,15 +34,6 @@
           <a href="/projects/openpedia.html" class="nav__drop-item">
             <span class="nav__drop-icon" style="background:#fff8ee;">📚</span>Openpedia<span class="nav__wip">WIP</span>
           </a>
-          <a href="#" class="nav__drop-item">
-            <span class="nav__drop-icon" style="background:#eef2ff;">⚡</span>Featured
-          </a>
-          <a href="#" class="nav__drop-item">
-            <span class="nav__drop-icon" style="background:#edfdf5;">🔓</span>Open Source
-          </a>
-          <a href="#" class="nav__drop-item">
-            <span class="nav__drop-icon" style="background:#f5f5f7;">📦</span>Archived
-          </a>
         </div>
       </li>
 
@@ -56,15 +47,6 @@
         <div class="nav__dropdown">
           <a href="/organisations/mst.html" class="nav__drop-item">
             <span class="nav__drop-icon" style="background:#f0eeff;">🏛️</span>MST<span class="nav__wip">WIP</span>
-          </a>
-          <a href="#" class="nav__drop-item">
-            <span class="nav__drop-icon" style="background:#fff0f6;">🔬</span>Research
-          </a>
-          <a href="#" class="nav__drop-item">
-            <span class="nav__drop-icon" style="background:#eef5ff;">💻</span>Development
-          </a>
-          <a href="#" class="nav__drop-item">
-            <span class="nav__drop-icon" style="background:#edfdf0;">🌱</span>Community
           </a>
         </div>
       </li>
@@ -120,95 +102,58 @@
 
     <div class="video-grid">
 
-      <!-- Row 1 -->
+      <!--
+        HOW TO ADD A VIDEO:
+        1. Drop your .mp4 (or .webm / .mov) file into the /videos/ folder
+        2. Copy one <div class="video-card"> block below
+        3. Set src="/videos/your-filename.mp4"
+        4. Update the tag, title, and duration text
+        5. Optionally set poster="/videos/your-thumbnail.jpg" on the <video> tag
+      -->
+
+      <!-- EXAMPLE CARD — duplicate and fill in for each video -->
       <div class="video-card">
-        <div class="video-card__thumb" style="background: linear-gradient(135deg, #1c1c1e, #2c2c2e);">
-          <div class="video-card__play">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M6 4l14 8-14 8V4z" fill="#1d1d1f"/>
-            </svg>
-          </div>
+        <div class="video-card__thumb">
+          <video
+            src="/videos/video1.mp4"
+            preload="metadata"
+            controls
+          ></video>
         </div>
         <div class="video-card__info">
-          <p class="video-card__tag">Placeholder</p>
-          <h3 class="video-card__title">Video Title Placeholder</h3>
-          <p class="video-card__meta">Duration unknown</p>
+          <p class="video-card__tag">Subject</p>
+          <h3 class="video-card__title">Video Title</h3>
+          <p class="video-card__meta">Duration</p>
         </div>
       </div>
 
       <div class="video-card">
-        <div class="video-card__thumb" style="background: linear-gradient(135deg, #0052cc, #40a9ff);">
-          <div class="video-card__play">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M6 4l14 8-14 8V4z" fill="#1d1d1f"/>
-            </svg>
-          </div>
+        <div class="video-card__thumb">
+          <video
+            src="/videos/video2.mp4"
+            preload="metadata"
+            controls
+          ></video>
         </div>
         <div class="video-card__info">
-          <p class="video-card__tag">Placeholder</p>
-          <h3 class="video-card__title">Video Title Placeholder</h3>
-          <p class="video-card__meta">Duration unknown</p>
+          <p class="video-card__tag">Subject</p>
+          <h3 class="video-card__title">Video Title</h3>
+          <p class="video-card__meta">Duration</p>
         </div>
       </div>
 
       <div class="video-card">
-        <div class="video-card__thumb" style="background: linear-gradient(135deg, #4a38c2, #bf5af2);">
-          <div class="video-card__play">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M6 4l14 8-14 8V4z" fill="#1d1d1f"/>
-            </svg>
-          </div>
+        <div class="video-card__thumb">
+          <video
+            src="/videos/video3.mp4"
+            preload="metadata"
+            controls
+          ></video>
         </div>
         <div class="video-card__info">
-          <p class="video-card__tag">Placeholder</p>
-          <h3 class="video-card__title">Video Title Placeholder</h3>
-          <p class="video-card__meta">Duration unknown</p>
-        </div>
-      </div>
-
-      <!-- Row 2 -->
-      <div class="video-card">
-        <div class="video-card__thumb" style="background: linear-gradient(135deg, #1d6340, #30d158);">
-          <div class="video-card__play">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M6 4l14 8-14 8V4z" fill="#1d1d1f"/>
-            </svg>
-          </div>
-        </div>
-        <div class="video-card__info">
-          <p class="video-card__tag">Placeholder</p>
-          <h3 class="video-card__title">Video Title Placeholder</h3>
-          <p class="video-card__meta">Duration unknown</p>
-        </div>
-      </div>
-
-      <div class="video-card">
-        <div class="video-card__thumb" style="background: linear-gradient(135deg, #7d2a10, #ff6b35);">
-          <div class="video-card__play">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M6 4l14 8-14 8V4z" fill="#1d1d1f"/>
-            </svg>
-          </div>
-        </div>
-        <div class="video-card__info">
-          <p class="video-card__tag">Placeholder</p>
-          <h3 class="video-card__title">Video Title Placeholder</h3>
-          <p class="video-card__meta">Duration unknown</p>
-        </div>
-      </div>
-
-      <div class="video-card">
-        <div class="video-card__thumb" style="background: linear-gradient(135deg, #1a1a30, #5e5ce6);">
-          <div class="video-card__play">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M6 4l14 8-14 8V4z" fill="#1d1d1f"/>
-            </svg>
-          </div>
-        </div>
-        <div class="video-card__info">
-          <p class="video-card__tag">Placeholder</p>
-          <h3 class="video-card__title">Video Title Placeholder</h3>
-          <p class="video-card__meta">Duration unknown</p>
+          <p class="video-card__tag">Subject</p>
+          <h3 class="video-card__title">Video Title</h3>
+          <p class="video-card__meta">Duration</p>
         </div>
       </div>
 
@@ -225,16 +170,10 @@
       <div>
         <p class="footer__col-head">Projects</p>
         <a href="/projects/openpedia.html" class="footer__link">Openpedia</a>
-        <a href="#" class="footer__link">Featured</a>
-        <a href="#" class="footer__link">Open Source</a>
-        <a href="#" class="footer__link">Archived</a>
       </div>
       <div>
         <p class="footer__col-head">Organisations</p>
         <a href="/organisations/mst.html" class="footer__link">MST</a>
-        <a href="#" class="footer__link">Research</a>
-        <a href="#" class="footer__link">Development</a>
-        <a href="#" class="footer__link">Community</a>
       </div>
       <div>
         <p class="footer__col-head">Resources</p>
